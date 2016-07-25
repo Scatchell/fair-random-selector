@@ -31,7 +31,7 @@ class App extends Component {
     selectRandom(event) {
         event.preventDefault();
 
-
+        Meteor.call('randomlySelectItem');
     }
 
     render() {
