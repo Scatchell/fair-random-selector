@@ -1,18 +1,10 @@
-import React, {Component, PropTypes} from 'react';
-import ReactDOM from 'react-dom';
-import {createContainer} from 'meteor/react-meteor-data';
-
-import {Items} from '../api/items.js';
-
-import Item from './Item.jsx';
+import React, {Component, PropTypes} from "react";
+import ReactDOM from "react-dom";
+import {createContainer} from "meteor/react-meteor-data";
+import {Items} from "../api/items.js";
+import ItemsList from "./ItemsList.jsx";
 
 class App extends Component {
-    renderItems() {
-        return this.props.items.map((item) => (
-            <Item key={item._id} item={item}/>
-        ));
-    }
-
     handleSubmit(event) {
         event.preventDefault();
 
@@ -50,7 +42,7 @@ class App extends Component {
                 </form>
 
                 <ul>
-                    {this.renderItems()}
+                    <ItemsList itemsList={this.props.items}/>
                 </ul>
 
                 <button className="select-random" onClick={this.selectRandom.bind(this)}>
