@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from "react";
 import {Items} from "../api/items.js";
 
-// Item component - represents a single item
 export default class Item extends Component {
     render() {
         const itemClassName = this.props.item.selected ? 'selected' : '';
